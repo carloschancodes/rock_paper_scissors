@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+function computerPlay() { //write a fxn called computerPlay 
+  var randomChoice = ['rock', 'paper', 'scissors']; //array
+  return randomChoice[Math.floor(Math.random() * randomChoice.length)]; //random array choice formula that calls one '' in randomChoice array
+}
+
+//declares var win & lose to keep score
+var win = 0;
+var lose = 0;
+
+function playRound (playerSelection, computerSelection) { //playRound fxn w/ 2 parameters
+  //if, else if, else scenario code to run for when player selects either rock, paper, scissors
+  if (playerSelection.toLowerCase() === 'rock') { //.toLowerCase for inputs
+    //if, else if, else scenario subcode to determine if comp or player wins
+    if (computerSelection === 'scissors') { 
+      win++; //adds 1 integer to var win
+      return 'You win! Rock beats scissors!' //return the 'message'
+    } else if (computerSelection === 'paper') {
+      lose++; //adds 1 integer to var lose
+      return 'Loser!';
+    } else {
+      return 'Draw!';
+    }
+   } else if (playerSelection.toLowerCase() === 'paper') {
+     if (computerSelection === 'rock') {
+       win++;
+       return 'You win! Paper beats rock!';
+     } else if (computerSelection === 'scissors') {
+       lose++;
+       return 'Loser!';
+     } else {
+       return 'Draw!'
+     }
+   } else if (playerSelection.toLowerCase() === 'scissors') {
+     if (computerSelection === 'paper') {
+       win++;
+       return 'You win! Scissors beats paper!'
+     } else if (computerSelection === 'rock') {
+         lose++;
+         return 'Loser Loser!'
+       } else { 
+         return 'Draw!';
+       }
+     } else { //final else displays message if user doesn't enter rock, paper, scissors
+       alert('Please enter a valid choice!');
+       round--; //if player enters invalid response, round count decreases so as not to count in games 5-count
+     }   
+  } //close playRound fxn
+
+function game() { //Write fxn called game()
+  round = 0; //starts round at 0
+  while (round < 5) { //below prompt shows for all rounds less than 5
+    playerSelection = prompt('Enter rock, paper, or scissors!'); //prompt
+    computerSelection = computerPlay (); //gives computerSelection all function rules of computerPlay()
+    console.log (playRound(playerSelection, computerSelection)); //use console.log to display results of each round
+    round++; //after each prompt, round tally goes up 1 integer
+  }
+  //game fxn results in an if, else if, else scenario
+  if (win > lose) {
+    console.log (`Yay! You won! You: ${win}, Computer: ${lose} `); //using backticks to allow embedded expression with ${variable} 
+  } else if (win < lose) {
+    console.log (`*insert sad trombone* You lost! You: ${win}, Computer: ${lose}`);
+  } else {
+    console.log ('It\'s a draw');
+  }
+}
+game(); //call game
+  </script>
+</body>
+</html>

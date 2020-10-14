@@ -1,0 +1,45 @@
+body {
+    background-image: url("https://wallpaperset.com/w/full/a/8/4/38610.jpg");
+    background-size: cover;
+    color: white;
+    font-family: 'Raleway', Courier;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-family: 'Raleway', Courier;
+    font-size: 80px;
+}
+
+input {
+    display: inline-block;
+    width: 225px;
+}
+
+.container {
+    display: flex;
+}
+.container.button_container {
+    justify-content: space-around;
+    font-family: Raleway
+}
+.container.score_container {  
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+
+}
+
+.container.result_container {
+    justify-content: center;
+}
+
+.container.btn_retry {
+    justify-content: center;
+}
+
+
+
+
+  
